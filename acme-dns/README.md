@@ -5,6 +5,10 @@
 
 # Installation
 
+Note: it may be necessary to add `DNSStubListener=no` to the `[Resolve]` section of
+`/etc/systemd/resolve.conf`, followed by restarting the `systemd-resolved` service,
+in order to allow `acme-dns` to bind to port `53`.
+
 1. Clone this repo
 2. Create a [configuration](#configuration)
 3. `docker compose up --build -d`
