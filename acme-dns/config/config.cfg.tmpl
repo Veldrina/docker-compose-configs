@@ -2,7 +2,7 @@
 # DNS interface. Note that systemd-resolved may reserve port 53 on 127.0.0.53
 # In this case acme-dns will error out and you will need to define the listening interface
 # for example: listen = "127.0.0.1:53"
-listen = "127.0.0.1:53"
+listen = "0.0.0.0:53"
 # protocol, "both", "both4", "both6", "udp", "udp4", "udp6" or "tcp", "tcp4", "tcp6"
 protocol = "both"
 # domain name to serve the requests off of
@@ -35,9 +35,9 @@ ip = "0.0.0.0"
 # disable registration endpoint
 disable_registration = false
 # listen port, eg. 443 for default HTTPS
-port = "443"
+port = "${API_LISTEN_PORT}"
 # possible values: "letsencrypt", "letsencryptstaging", "cert", "none"
-tls = "letsencrypt"
+tls = "${API_TLS}"
 # only used if tls = "cert"
 tls_cert_privkey = "/etc/tls/example.org/privkey.pem"
 tls_cert_fullchain = "/etc/tls/example.org/fullchain.pem"

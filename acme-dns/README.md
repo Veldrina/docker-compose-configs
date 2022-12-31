@@ -27,6 +27,8 @@ DOMAIN='auth.example.org' # FQDN of the server running acme-dns
 NSNAME='auth.example.org' # FQDN of the name server handling the DNS zone for ${DOMAIN}
 NSADMIN='admin.example.org' # SOA RNAME as described in RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt)
 PUBLIC_IP='192.168.0.1' # public IP of the acme-dns server ${DOMAIN}
+PUBLIC_PORT: 8443 # public port of the acme-dns server; optional (default is 8443)
+API_LISTEN_PORT: 443 # internal port on the Docker container that the acme-dns server will listen to; optional (default is 443)
+API_TLS: letsencryptstaging # method acme-dns server will use to acquire its own certificate for the API; optional (default is `letsencryptstaging`)
 NOTIFICATION_EMAIL='admin.example.org' # e-mail address to which Let's Encrypt will send expiration notices for the API's cert; optional
-HTTPS_PORT='8443' # HTTPS port that acme-dns should listen; optional (default is 8443)
 ```
