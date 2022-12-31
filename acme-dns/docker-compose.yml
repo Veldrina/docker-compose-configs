@@ -1,0 +1,15 @@
+services:
+  acmedns:
+    build: .
+    environment:
+      DOMAIN: ${DOMAIN:?}
+      NSNAME: ${NSNAME:?}
+      NSADMIN: ${NSADMIN:?}
+      PUBLIC_IP: ${PUBLIC_IP:?}
+      NOTIFICATION_EMAIL: ${NOTIFICATION_EMAIL}
+    ports:
+      - "${HTTPS_PORT:-8443}:443"
+      - "53:53"
+      - "53:53/udp"
+    volumes:
+      - ./data:/var/lib/acme-dns
