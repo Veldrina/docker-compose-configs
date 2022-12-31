@@ -15,7 +15,7 @@ nsadmin = "${NSADMIN}"
 records = [
     # domain pointing to the public IP of your acme-dns server 
     "${DOMAIN}. A ${PUBLIC_IP}",
-    # specify that ${DOMAIN} will resolve any *.${NSNAME} records
+    # specify that ${NSNAME} will resolve DNS records for ${DOMAIN}
     "${DOMAIN}. NS ${NSNAME}.",
 ]
 # debug messages from CORS etc
