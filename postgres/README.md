@@ -1,6 +1,6 @@
 # Introduction
 
-`docker compose` stack for deploying [`pgAdmin4`](https://www.pgadmin.org/).
+`docker compose` stack for deploying [`PostgreSQL`](https://www.postgresql.org/).
 
 
 # Installation
@@ -13,6 +13,5 @@
 The following environment variables are used for configuration of the default superuser and are required:
 
 ```
-PGADMIN_DEFAULT_EMAIL
-PGADMIN_DEFAULT_PASSWORD
+POSTGRES_PASSWORD
 ```
