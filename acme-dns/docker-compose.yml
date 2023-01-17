@@ -1,6 +1,7 @@
 services:
   acmedns:
     build: .
+    restart: unless-stopped
     environment:
       DOMAIN: ${DOMAIN:?}
       NSNAME: ${NSNAME:?}
