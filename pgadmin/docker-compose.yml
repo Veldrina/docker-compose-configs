@@ -10,4 +10,7 @@ services:
     ports:
       - 5050:80
     volumes:
-      - ./data:/var/lib/pgadmin
+      - pgadmin:/var/lib/pgadmin
+
+volumes:
+    pgadmin:
