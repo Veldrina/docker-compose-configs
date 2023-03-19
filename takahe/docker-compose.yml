@@ -14,7 +14,7 @@ x-takahe-common:
       TAKAHE_ENVIRONMENT: "production"
       TAKAHE_CSRF_TRUSTED_ORIGINS: '["http://127.0.0.1:8000", "https://127.0.0.1:8000"]'
       TAKAHE_USE_PROXY_HEADERS: "true"
-    restart: unless-stopped
+    restart: on-failure
 
 services:
   web:
@@ -40,7 +40,7 @@ services:
   tunnel:
     container_name: cloudflared-tunnel
     image: cloudflare/cloudflared:latest
-    restart: unless-stopped
+    restart: on-failure
     command: tunnel run
     environment:
       TUNNEL_TOKEN: ${CLOUDFLARED_TUNNEL_TOKEN:?}
