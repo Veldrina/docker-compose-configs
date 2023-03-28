@@ -1,7 +1,7 @@
 services:
   acmedns:
     build: .
-    restart: on-failure
+    restart: always
     environment:
       DOMAIN: ${DOMAIN:?}
       NSNAME: ${NSNAME:?}

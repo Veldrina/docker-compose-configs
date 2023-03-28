@@ -1,7 +1,7 @@
 services:
   pgadmin:
     image: dpage/pgadmin4:6
-    restart: on-failure
+    restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:?}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:?}
