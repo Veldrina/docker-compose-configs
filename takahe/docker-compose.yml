@@ -2,6 +2,10 @@ x-takahe-common:
   &takahe-common
 
     image: jointakahe/takahe:latest
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
     environment:
       TAKAHE_DATABASE_SERVER: ${TAKAHE_DATABASE_SERVER:?}
       TAKAHE_SECRET_KEY: ${TAKAHE_SECRET_KEY:?}
