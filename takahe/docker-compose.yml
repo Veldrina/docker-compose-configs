@@ -2,10 +2,6 @@ x-takahe-common:
   &takahe-common
 
     image: jointakahe/takahe:latest
-    deploy:
-      resources:
-        limits:
-          cpus: '0.20'
     environment:
       TAKAHE_DATABASE_SERVER: ${TAKAHE_DATABASE_SERVER:?}
       TAKAHE_SECRET_KEY: ${TAKAHE_SECRET_KEY:?}
@@ -23,6 +19,10 @@ x-takahe-common:
 services:
   web:
     <<: *takahe-common
+    deploy:
+      resources:
+        limits:
+          cpus: '0.40'
     healthcheck:
       test: ["CMD", "nc", "-z", "-v", "localhost", "8000"]
       interval: 20s
@@ -33,6 +33,10 @@ services:
 
   stator:
     <<: *takahe-common
+    deploy:
+      resources:
+        limits:
+          cpus: '0.15'
     command: ["/takahe/manage.py", "runstator"]
 
   setup:
