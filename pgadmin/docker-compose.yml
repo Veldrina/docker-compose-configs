@@ -1,6 +1,6 @@
 services:
   pgadmin:
-    image: dpage/pgadmin4:8.0
+    image: dpage/pgadmin4:latest
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:?}
